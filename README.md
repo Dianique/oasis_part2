@@ -30,14 +30,11 @@
 <details open="open">
   <summary>Table of Contents</summary>
   <ol>
-      <ul>
-        <li><a href="#what-it-does">What It Does</a></li>
+         <li><a href="#what-it-does">What It Does</a></li>
          <li><a href="#how-we-intend-to-build-it">How We Intend to Build It</a></li>
-      </ul>
-    </li>
-    <li><a href="#built-with">Built With</a></li>
-    <li><a href="#acknowledgements">Acknowledgements</a></li>
-    <li><a href="#our-team">Our Team</a></li>
+         <li><a href="#built-with">Built With</a></li>
+         <li><a href="#acknowledgements-add-ons-plugins">Acknowledgements, Add-ons, Plugins</a></li>
+         <li><a href="#our-team">Our Team</a></li>
   </ol>
 </details>
 
