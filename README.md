@@ -5,7 +5,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/TeamImpossible/oasis/">
-    <img src="images/logo.png" alt="Logo">
+    <img src="oasis_logo.png" alt="Logo">
   </a>
 
   <h1 align="center">Oasis</h1>
@@ -46,11 +46,7 @@
 <!-- ABOUT THE PROJECT -->
 
 ## What It Does 
-
- <a href="#">
-    <img src="#" alt="Logo">
-  </a>
-
+The best source for authentic travel experiences and recommendations of places to go and things to do no matter where you find yourself.
 
 ## How We Intend to Build It 
 
