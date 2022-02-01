@@ -2,4 +2,5 @@
     <string name="app_name">oasis</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="travel_stories">Travel Stories</string>
 </resources>
