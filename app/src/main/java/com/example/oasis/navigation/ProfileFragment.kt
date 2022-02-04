@@ -36,10 +36,17 @@ class ProfileFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         view.findViewById<ImageView>(R.id.home_icon).setOnClickListener {
 
-            val goToMainFeed = ProfileFragmentDirections.actionProfileFragmentToMainFeedFragment()
-            findNavController().navigate(goToMainFeed)
+            val profileToMainFeed =
+                ProfileFragmentDirections.actionProfileFragmentToMainFeedFragment()
+            findNavController().navigate(profileToMainFeed)
 
         }
-            }
+
+        view.findViewById<ImageView>(R.id.pin_icon).setOnClickListener {
+            val profileToPinIt =
+                ProfileFragmentDirections.actionProfileFragmentToPinItFragment2()
+            findNavController().navigate(profileToPinIt)
+        }
     }
 
+}
