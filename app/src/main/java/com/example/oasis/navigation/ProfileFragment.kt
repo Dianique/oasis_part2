@@ -6,7 +6,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageView
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -35,18 +34,27 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         view.findViewById<ImageView>(R.id.home_icon).setOnClickListener {
-
             val profileToMainFeed =
                 ProfileFragmentDirections.actionProfileFragmentToMainFeedFragment()
             findNavController().navigate(profileToMainFeed)
-
         }
-
         view.findViewById<ImageView>(R.id.pin_icon).setOnClickListener {
-            val profileToPinIt =
-                ProfileFragmentDirections.actionProfileFragmentToPinItFragment2()
+            val profileToPinIt = ProfileFragmentDirections.actionProfileFragmentToPinItFragment2()
             findNavController().navigate(profileToPinIt)
         }
+        view.findViewById<ImageView>(R.id.imageBali).setOnClickListener {
+            val baliImageToMainFeed =
+                ProfileFragmentDirections.actionProfileFragmentToMainFeedFragment()
+            findNavController().navigate(baliImageToMainFeed)
+        }
+        view.findViewById<ImageView>(R.id.imageAmboseli).setOnClickListener {
+            val amboseliImageToMainFeed =
+                ProfileFragmentDirections.actionProfileFragmentToMainFeedFragment()
+            findNavController().navigate(amboseliImageToMainFeed)
+        }
+        view.findViewById<ImageView>(R.id.imageBarcelona).setOnClickListener {
+            val barcelonaImageToMainFeed = ProfileFragmentDirections.actionProfileFragmentToMainFeedFragment()
+            findNavController().navigate(barcelonaImageToMainFeed)
+        }
     }
-
 }

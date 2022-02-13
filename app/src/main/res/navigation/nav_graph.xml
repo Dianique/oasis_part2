@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFeedFragment">
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.oasis.navigation.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_mainFeedFragment"
+            app:destination="@id/mainFeedFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_pinItFragment2"
+            app:destination="@id/pinItFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFeedFragment"
+        android:name="com.example.oasis.navigation.MainFeedFragment"
+        android:label="fragment_main_feed"
+        tools:layout="@layout/fragment_main_feed" >
+        <action
+            android:id="@+id/action_mainFeedFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_mainFeedFragment_to_pinItFragment3"
+            app:destination="@id/pinItFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pinItFragment"
+        android:name="com.example.oasis.navigation.PinItFragment"
+        android:label="fragment_pin_it"
+        tools:layout="@layout/fragment_pin_it" >
+        <action
+            android:id="@+id/action_pinItFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_pinItFragment_to_mainFeedFragment"
+            app:destination="@id/mainFeedFragment" />
+    </fragment>
+</navigation>
