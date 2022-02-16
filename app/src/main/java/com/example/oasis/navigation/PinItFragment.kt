@@ -1,7 +1,6 @@
 package com.example.oasis.navigation
 
 import android.os.Bundle
-import android.text.Layout
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -29,6 +28,7 @@ class PinItFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_pin_it, container, false)
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         view.findViewById<ImageView>(R.id.home_icon_pinIt).setOnClickListener {
@@ -37,10 +37,9 @@ class PinItFragment : Fragment() {
             findNavController().navigate(pinToMainFeed)
         }
         view.findViewById<ImageView>(R.id.profile_icon_pinIt).setOnClickListener {
+
             val pinToProfile = PinItFragmentDirections.actionPinItFragmentToProfileFragment()
             findNavController().navigate(pinToProfile)
-
-
 
         }
     }

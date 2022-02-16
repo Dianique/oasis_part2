@@ -10,6 +10,11 @@
         android:name="com.example.oasis.navigation.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" >
+        <argument
+
+            android:name="baliImageView"
+            android:defaultValue=""
+            app:argType="string"></argument>
         <action
             android:id="@+id/action_profileFragment_to_mainFeedFragment"
             app:destination="@id/mainFeedFragment" />
@@ -22,12 +27,13 @@
         android:name="com.example.oasis.navigation.MainFeedFragment"
         android:label="fragment_main_feed"
         tools:layout="@layout/fragment_main_feed" >
-        <action
-            android:id="@+id/action_mainFeedFragment_to_profileFragment"
-            app:destination="@id/profileFragment" />
+
         <action
             android:id="@+id/action_mainFeedFragment_to_pinItFragment3"
             app:destination="@id/pinItFragment" />
+        <action
+            android:id="@+id/action_mainFeedFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
     </fragment>
     <fragment
         android:id="@+id/pinItFragment"

@@ -48,7 +48,7 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
-                                                <entry key="imagePath" value="C:\Users\ashle\OneDrive\Pictures\oasis pics\amboseli park.jpg" />
+                                                <entry key="imagePath" value="C:\Users\ashle\OneDrive\Pictures\oasis pics\cartagena.jpg" />
                                                 <entry key="opacityPercent" value="80" />
                                               </map>
                                             </option>
@@ -82,8 +82,8 @@
                                   <option name="values">
                                     <map>
                                       <entry key="assetType" value="IMAGE" />
-                                      <entry key="imageAsset" value="C:\Users\ashle\OneDrive\Pictures\oasis pics\amboseli park.jpg" />
-                                      <entry key="outputName" value="amboseli_pic" />
+                                      <entry key="imageAsset" value="C:\Users\ashle\OneDrive\Pictures\oasis pics\cartagena.jpg" />
+                                      <entry key="outputName" value="cartagena" />
                                       <entry key="theme" value="CUSTOM" />
                                       <entry key="themeColor" value="5b5959" />
                                     </map>

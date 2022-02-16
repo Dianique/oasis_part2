@@ -1,6 +1,5 @@
 package com.example.oasis.navigation
 
-import android.media.Image
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.fragment.navArgs
 import com.example.oasis.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -21,7 +19,11 @@ private const val ARG_PARAM2 = "param2"
  * Use the [ProfileFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
+
+
 class ProfileFragment : Fragment() {
+    //val args: ProfileFragmentArgs by navArgs()
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,28 +35,25 @@ class ProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        view.findViewById<ImageView>(R.id.home_icon).setOnClickListener {
-            val profileToMainFeed =
-                ProfileFragmentDirections.actionProfileFragmentToMainFeedFragment()
-            findNavController().navigate(profileToMainFeed)
-        }
-        view.findViewById<ImageView>(R.id.pin_icon).setOnClickListener {
-            val profileToPinIt = ProfileFragmentDirections.actionProfileFragmentToPinItFragment2()
-            findNavController().navigate(profileToPinIt)
-        }
+
         view.findViewById<ImageView>(R.id.imageBali).setOnClickListener {
-            val baliImageToMainFeed =
-                ProfileFragmentDirections.actionProfileFragmentToMainFeedFragment()
-            findNavController().navigate(baliImageToMainFeed)
+
+            val baliToMainFeed = ProfileFragmentDirections.actionProfileFragmentToMainFeedFragment()
+            findNavController().navigate(baliToMainFeed)
         }
-        view.findViewById<ImageView>(R.id.imageAmboseli).setOnClickListener {
-            val amboseliImageToMainFeed =
-                ProfileFragmentDirections.actionProfileFragmentToMainFeedFragment()
-            findNavController().navigate(amboseliImageToMainFeed)
-        }
-        view.findViewById<ImageView>(R.id.imageBarcelona).setOnClickListener {
-            val barcelonaImageToMainFeed = ProfileFragmentDirections.actionProfileFragmentToMainFeedFragment()
-            findNavController().navigate(barcelonaImageToMainFeed)
+            view.findViewById<ImageView>(R.id.home_icon).setOnClickListener {
+                val profileToMainFeed =
+                    ProfileFragmentDirections.actionProfileFragmentToMainFeedFragment()
+                findNavController().navigate(profileToMainFeed)
+            }
+            view.findViewById<ImageView>(R.id.pin_icon).setOnClickListener {
+                val profileToPinIt =
+                    ProfileFragmentDirections.actionProfileFragmentToPinItFragment2()
+                findNavController().navigate(profileToPinIt)
+            }
+
         }
     }
-}
+
+
+
