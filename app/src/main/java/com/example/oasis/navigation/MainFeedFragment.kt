@@ -59,7 +59,6 @@ class MainFeedFragment : Fragment() {
             findNavController().navigate(mainToProfile)
         }
         val travelLists = mutableListOf(
-            TravelStoriesData(R.drawable.bali, "Bali", "Dia's Oasis"),
             TravelStoriesData(R.drawable.amboseli, "Kenya", "Daniel's Oasis"),
             TravelStoriesData(R.drawable.barcelona, "Barcelona", "Max's Oasis")
 

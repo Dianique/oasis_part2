@@ -9,7 +9,7 @@ import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
 import com.example.oasis.R
 
-class TravelFeedAdapter(private val imageList: MutableList<TravelStoriesData>,
+class TravelFeedAdapter(private val imageMainList: MutableList<TravelStoriesData>,
   //  private val onClickListener: onClickListner
 ) :
     RecyclerView.Adapter<TravelFeedAdapter.ItemViewHolder>() {
@@ -47,9 +47,9 @@ class TravelFeedAdapter(private val imageList: MutableList<TravelStoriesData>,
         holder: ItemViewHolder,
         position: Int, ) { //onBindViewHolder called by recyclerView to bind data to Viewholder and fill in layout.
 
-        val travel = imageList[position]
-        holder.travelName.text = "${travel.travelLocation}"
-        holder.userName.text = "${travel.traveler}"
+        val travel = imageMainList[position]
+        holder.travelName.text = travel.travelLocation
+        holder.userName.text = travel.traveler
         holder.destinationImage.setImageResource(travel.travelImage)
         //val resourceImage = getResources()
 
@@ -72,7 +72,7 @@ class TravelFeedAdapter(private val imageList: MutableList<TravelStoriesData>,
     }
 
     override fun getItemCount(): Int {
-        return imageList.size
+        return imageMainList.size
     }
 }
 
