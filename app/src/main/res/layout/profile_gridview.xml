@@ -1,47 +1,81 @@
-<?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="15dp"
     app:cardCornerRadius="5dp"
-    app:cardBackgroundColor="@android:color/white"
+    app:cardElevation="8dp"
     android:layout_margin="10dp"
-    app:cardElevation="8dp">
+    android:layout_marginLeft="24dp"
+    android:layout_marginRight="24dp"
+    android:layout_marginVertical="10dp"
+    android:scrollbarAlwaysDrawVerticalTrack="true"
+    app:cardBackgroundColor="@color/white">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+
         <ImageView
-            android:layout_width="150dp"
+            android:id="@+id/travelImage"
+            android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:id="@+id/cameraImageView"
             android:scaleType="fitXY"
-            />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/travelview" />
 
-        <TextView
-
+        <EditText
+            android:id="@+id/location"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/travelTitle"
-            android:textColor="@android:color/black"
-            android:textSize="21dp"
-            android:text="Title"
-            android:layout_marginLeft="14dp"
-            android:layout_marginRight="10dp"/>
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="10dp"
+            android:minHeight="48dp"
+            android:text="Location"
+            android:textColor="#009688"
+            android:textSize="14sp" />
 
-        <TextView
+        <EditText
+            android:id="@+id/info"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/travelDesc"
-            android:text="Desc"
-            android:textSize="18dp"
-            android:layout_marginLeft="14dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="10dp"/>
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="10dp"
+            android:minHeight="48dp"
+            android:text="Where to next?"
+            android:textColor="#009688"
+            android:textSize="14sp" />
+
 
     </LinearLayout>
 
-</androidx.cardview.widget.CardView>
+
+        </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

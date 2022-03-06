@@ -10,11 +10,7 @@
         android:name="com.example.oasis.navigation.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" >
-        <argument
 
-            android:name="baliImageView"
-            android:defaultValue=""
-            app:argType="string"></argument>
         <action
             android:id="@+id/action_profileFragment_to_mainFeedFragment"
             app:destination="@id/mainFeedFragment" />

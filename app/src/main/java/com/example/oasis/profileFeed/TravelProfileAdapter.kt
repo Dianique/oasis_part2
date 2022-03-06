@@ -3,44 +3,56 @@ package com.example.oasis.profileFeed
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.oasis.R
 
-class TravelProfileAdapter(
-    private val imageProfileList: MutableList<Int>,
-  ):
-    RecyclerView.Adapter<TravelProfileAdapter.ImageViewHolder>() {
 
+class TravelProfileAdapter(private val imageList: MutableList<TravelProfileData>,
+):
+RecyclerView.Adapter<TravelProfileAdapter.ViewHolder>(){
 
-    inner class ImageViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    inner class ViewHolder(view:View): RecyclerView.ViewHolder(view){
 
-        var textView: TextView = view.findViewById(R.id.travelTitle)
-        var textViewDesc: TextView = view.findViewById(R.id.travelDesc)
-        val imageView: ImageView = view.findViewById(R.id.cameraImageView)
+        var image: ImageView
+        var location: EditText
+        var description: EditText
 
+        init {
+            description = itemView.findViewById(R.id.info)
+            image = itemView.findViewById(R.id.travelImage)
+            location = itemView.findViewById(R.id.location)
+        }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ImageViewHolder {
-       // method to setup a new Viewholder and its view - called by the recyclerView.
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int, ): TravelProfileAdapter.ViewHolder {
+        // method to setup a new Viewholder and its view - called by the recyclerView.
         val context = parent.context //tells the program what xml layout to use
         val inflater = LayoutInflater.from(context) //inflates the layout of the screen
         val adapterLayout = inflater.inflate(R.layout.profile_gridview, parent, false)
-        return ImageViewHolder(adapterLayout)
+        return ViewHolder(adapterLayout)
+
     }
 
-    override fun onBindViewHolder(holder: ImageViewHolder, position: Int) {
-        holder.textView.text.toString()
-        holder.textViewDesc.text.toString()
 
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        var data = imageList[position]
+        holder.description.text
+        holder.location.text
+        holder.image.setImageResource(data.images)
 
-        holder.imageView.setImageResource(imageProfileList[position])
-        }
-
-
-    override fun getItemCount(): Int {
-        return imageProfileList.size
     }
+
+    override fun getItemCount() = imageList.size
+
+
 }
+
+
+
+
+
+
 

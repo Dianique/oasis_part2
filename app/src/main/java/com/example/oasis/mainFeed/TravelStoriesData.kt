@@ -1,4 +1,4 @@
 package com.example.oasis.mainFeed
 
-data class TravelStoriesData (var travelImage: Int, var travelLocation: String, var traveler: String)
+data class TravelStoriesData (var travelImages: Int, var travelLocation: String, var traveler: String)
 

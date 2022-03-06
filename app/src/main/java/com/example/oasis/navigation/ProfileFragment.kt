@@ -7,17 +7,21 @@ import android.graphics.Bitmap
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.oasis.R
+import com.example.oasis.profileFeed.TravelProfileAdapter
+import com.example.oasis.profileFeed.TravelProfileData
 
 
 class ProfileFragment : Fragment() {
-    private val REQUEST_IMAGE_CAPTURE = 10
+     private val REQUEST_IMAGE_CAPTURE = 1
 
 
     override fun onCreateView(
@@ -32,9 +36,6 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-     //   val recyclerView = view.findViewById<RecyclerView>(R.id.recycler_view)
-
-
 
         view.findViewById<ImageView>(R.id.home_icon).setOnClickListener {
             val profileToMainFeed =
@@ -47,16 +48,37 @@ class ProfileFragment : Fragment() {
             findNavController().navigate(profileToPinIt)
         }
 
-        view.findViewById<ImageView>(R.id.camera_icon).setOnClickListener {
-            Log.i("Images", "Pull up camera")
+        val travelLists = mutableListOf(
+           TravelProfileData(R.drawable.travelview,"location","description"),
+            TravelProfileData(R.drawable.brownies,"location","description"),
+            TravelProfileData(R.drawable.hamburger,"location","description"),
+            TravelProfileData(R.drawable.italy,"location","description"),
+            TravelProfileData(R.drawable.mexico,"location","description"),
+            TravelProfileData(R.drawable.nepal,"location","description"),
+            TravelProfileData(R.drawable.norway,"location","description"),
+            TravelProfileData(R.drawable.phillipines,"location","description"),
+            TravelProfileData(R.drawable.playground,"location","description"),
+            TravelProfileData(R.drawable.rome,"location","description"),
+            TravelProfileData(R.drawable.camping,"location","description"),
+            TravelProfileData(R.drawable.amboseli,"location","description"),
+
+            )
+
+      val recyclerView = view.findViewById<RecyclerView>(R.id.recycler_view)
+        recyclerView.apply{
+            layoutManager = GridLayoutManager(context,2)
+             adapter = TravelProfileAdapter(travelLists)
+             recyclerView.setHasFixedSize(true)
+        }
+
+          view.findViewById<ImageView>(R.id.camera_icon).setOnClickListener {
             val takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
             try {
                 startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE)
             } catch (e: ActivityNotFoundException) {
-                // display error state to the user
+                Log.i("Images", "Camera profile")
             }
         }
-
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -64,8 +86,11 @@ class ProfileFragment : Fragment() {
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
             val imageBitmap = data?.extras?.get("data") as Bitmap
             view?.findViewById<ImageView>(R.id.imageCapture)?.setImageBitmap(imageBitmap)
-
         }
+
     }
 
-}
+    }
+
+
+

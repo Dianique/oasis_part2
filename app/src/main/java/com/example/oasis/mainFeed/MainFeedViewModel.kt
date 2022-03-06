@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel
 class MainFeedViewModel: ViewModel() {
 var positionClicked = -1
 
-val imageList = mutableListOf<Int>()
+val mainList = mutableListOf<String>()
 
 //Create a ViewModel class to save your data in state. The inputted tasks delete when you navigate
 //between screens. For this reason ViewModel class is needed.
